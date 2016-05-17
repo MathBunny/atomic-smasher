@@ -1,0 +1,179 @@
+/** 
+ * @author Horatiu Lazu
+ * Incomplete class.*/
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.*;
+
+
+
+public class Sidebar extends JPanel implements ActionListener, MouseListener{ //ActionListener?
+  private Image background;
+  private Image pipes[] = new Image [21];
+  private Image border[] = new Image [2];
+  
+  
+  public Sidebar(){
+    initializeImage();
+    addMouse();
+  }
+  
+  public void initializeImage(){
+    try{
+      background = ImageIO.read(new File("Sidebar.png"));
+      for (int x = 0; x < 21; x++)
+      {
+        pipes[x] = ImageIO.read(new File("pipe" + x + ".png")); 
+      }
+      for (int x = 0; x < 2; x++)
+      {
+        border[x] = ImageIO.read(new File("border" + x + ".png")); 
+      }
+    }
+    catch(IOException e){}
+  }
+  
+  public void addMouse(){
+    addMouseListener(new MouseAdapter(){
+      public void mouseClicked(MouseEvent e) {
+        if (e.getX() >= 8 && e.getX() <= 33)
+        {
+          if (e.getY() >= 6 && e.getY() <= 31)
+          {
+            GameApp.c.repaint();
+            Controller.command = "plus";
+          }         
+          else if (e.getY() >= 35 && e.getY() <= 60)
+          {
+            GameApp.c.repaint();
+            Controller.command = "v";
+          }   
+          else if (e.getY() >= 64 && e.getY() <= 89)
+          {
+            GameApp.c.repaint();
+            Controller.command = "h";
+          }   
+          else if (e.getY() >= 93 && e.getY() <= 118)
+          {
+            GameApp.c.repaint();
+            Controller.command = "vdbl";
+          }
+          else if (e.getY() >= 122 && e.getY() <= 147)
+          {
+            GameApp.c.repaint();
+            Controller.command = "vdbr";
+          }
+          else if (e.getY() >= 151 && e.getY() <= 176)
+          {
+            GameApp.c.repaint();
+            Controller.command = "vdul";
+          }
+          else if (e.getY() >= 180 && e.getY() <= 205)
+          {
+            GameApp.c.repaint();
+            Controller.command = "vdur";
+          }
+          else if (e.getY() >= 209 && e.getY() <= 234)
+          {
+            GameApp.c.repaint();
+            Controller.command = "hdbr";
+          }
+          else if (e.getY() >= 238 && e.getY() <= 263)
+          {
+            GameApp.c.repaint();
+            Controller.command = "hdul";
+          }
+          else if (e.getY() >= 267 && e.getY() <= 292)
+          {
+            GameApp.c.repaint();
+            Controller.command = "hdur";
+          }
+          else if (e.getY() >= 296 && e.getY() <= 321)
+          {
+            GameApp.c.repaint();
+            Controller.command = "hdbl";
+          }
+          else if (e.getY() >= 325 && e.getY() <= 350)
+          {
+            GameApp.c.repaint();
+            Controller.command = "dbr";
+          }
+          else if (e.getY() >= 354 && e.getY() <= 379)
+          {
+            GameApp.c.repaint();
+            Controller.command = "dur";
+          }
+          else if (e.getY() >= 383 && e.getY() <= 408)
+          {
+            GameApp.c.repaint();
+            Controller.command = "dul";
+          }
+          else if (e.getY() >= 412 && e.getY() <= 437)
+          {
+            GameApp.c.repaint();
+            Controller.command = "dbl";
+          }
+          else if (e.getY() >= 441 && e.getY() <= 466)
+          {
+            GameApp.c.repaint();
+            Controller.command = "merge0";
+          }
+          else if (e.getY() >= 470 && e.getY() <= 495)
+          {
+            GameApp.c.repaint();
+            Controller.command = "merge1";
+          }
+          else if (e.getY() >= 499 && e.getY() <= 524)
+          {
+            GameApp.c.repaint();
+            Controller.command = "merge2";
+          }
+          else if (e.getY() >= 528 && e.getY() <= 553)
+          {
+            GameApp.c.repaint();
+            Controller.command = "merge3";
+          }
+          else if (e.getY() >= 557 && e.getY() <= 582)
+          {
+            GameApp.c.repaint();
+            Controller.command = "erase";
+          }
+          else
+          {
+            if (e.getY() >= 586 && e.getY() <= 611)
+            {
+              GameApp.c.repaint();
+              Controller.command = "x";
+            }
+          }
+          System.out.println(e.getY());
+        }
+      }                
+    });
+    addMouseMotionListener(new MouseMotionAdapter() {
+      public void mouseMoved(MouseEvent e) { //Add proposed helper method!
+      }
+    });
+  }
+  
+  protected void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    g.drawImage(background, 0, 0, null); // see javadoc for more info on the parameters
+    
+    for (int x = 0; x < 21; x++)
+    {
+      g.drawImage(pipes[x], 8, 6 + x*29, null);
+    }
+  }
+  
+  public void actionPerformed(ActionEvent e){}
+  public void mouseClicked(MouseEvent e) {}
+  public void mousePressed(MouseEvent e) {}
+  public void mouseEntered(MouseEvent e) {}
+  public void mouseExited(MouseEvent e) {}
+  public void mouseReleased(MouseEvent e) {}
+}
