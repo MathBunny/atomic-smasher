@@ -24,24 +24,10 @@ public class Level21 extends Level{
     
     
     new World(7, 7); //Set the size of the world.
-    //You now need to add pipes!.
-    //Pipe ppp = new Pipe("PipeLeft.png", "1", 3, 2, Controller.WEST);
-    //world.items[0][0] = ppp;
-    //World.item.set(0, 0, new 
     addParticleSource("pipestartE", "Horatiu", 0, 4, Color.blue, Controller.EAST, 1, "Oxygen");
     addParticleSource("pipestartW", "Horatiu", 6, 4, Color.blue, Controller.WEST, 1, "Oxygen");
-    //addParticleSource("pipestartW", "Horatiu", 5, 2, Color.blue, Controller.WEST, 1, "Hydrogen");
-    //Destination(String picSource, String name, int x, int y, int direction, String elementName
     Destination goal = new Destination("pipeEndN", "Horatiu", 3, 6, Controller.NORTH, "../images/Oxygen2");
     DiatomicBlock b = new DiatomicBlock("diatomicCombineS", "Horatiu", 3, 4, "Oxygen", "Oxygen2");
-    //public DiatomicBlock(String picSource, String name, int x, int y, String compoundNames, String output){
-    
-    //Destination goal2 = new Destination("pipeEndE", "Horatiu", 4, 5, Controller.EAST, "Hydrogen");
-    
-    //public Obstacle(String picSource, String name, int x, int y, Color c)
-    
-    
-    
     
     for(int i = 0; i < 7; i++)
       World.setItem(i, 3, new Obstacle("Rock", "Rock", 2, i, Color.blue));

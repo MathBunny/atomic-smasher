@@ -102,7 +102,7 @@ public class Controller{
     */
   public static int getYChange(int direction){
     if (direction == NORTH || direction == NORTH_WEST || direction == NORTH_EAST)
-      return -1; //OMGOMGOMGOGM
+      return -1;
     else if (direction == EAST || direction == WEST)
       return 0;
     else

@@ -21,16 +21,9 @@ public class Level12 extends Level{
   public void initializeWorld(){
     
     new World(7, 7); //Set the size of the world.
-    //You now need to add pipes!.
-    //Pipe ppp = new Pipe("PipeLeft.png", "1", 3, 2, Controller.WEST);
-    //world.items[0][0] = ppp;
-    //World.item.set(0, 0, new 
     addParticleSource("pipestartE", "Horatiu", 1, 5, Color.blue, Controller.EAST, 1, "Oxygen");
-    //addParticleSource("pipestartW", "Horatiu", 5, 2, Color.blue, Controller.WEST, 1, "Hydrogen");
-    //Destination(String picSource, String name, int x, int y, int direction, String elementName
     Destination goal = new Destination("pipeEndW", "Horatiu", 5, 2, Controller.WEST, "Oxygen");
     
-    //public Obstacle(String picSource, String name, int x, int y, Color c)
     World.setItem(5, 3, goal);
     World.setItem(0, 1, new Obstacle("Rock", "Rock_OBSTACLE", 0, 1, Color.blue));
     World.setItem(2, 0, new Obstacle("Rock", "Rock_OBSTACLE", 2, 0, Color.blue));
@@ -51,9 +44,6 @@ public class Level12 extends Level{
     
     JOptionPane.showMessageDialog (null, "You have been hired by Katya to make a piping system"
                                      + " to transfer oxygen. Make sure the oxygen does not go way off the pipes!"); 
-    
-    
-    //Start at middle, 44!!
     
   }
   /** This method plays the world by calling the superclass simulate() method*/

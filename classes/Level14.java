@@ -22,15 +22,9 @@ public class Level14 extends Level{
     * */
   public void initializeWorld(){
     
-    new World(7, 7); //Set the size of the world.
-    //You now need to add pipes!.
-    //Pipe ppp = new Pipe("PipeLeft.png", "1", 3, 2, Controller.WEST);
-    //world.items[0][0] = ppp;
-    //World.item.set(0, 0, new 
+    new World(7, 7);
     addParticleSource("pipestartE", "Horatiu", 0, 5, Color.blue, Controller.EAST, 1, "Hydrogen");
     addParticleSource("pipestartW", "Horatiu", 6, 5, Color.blue, Controller.WEST, 1, "Hydrogen");
-    //addParticleSource("pipestartW", "Horatiu", 5, 2, Color.blue, Controller.WEST, 1, "Hydrogen");
-    //Destination(String picSource, String name, int x, int y, int direction, String elementName
     Destination goal = new Destination("pipeEndW", "Horatiu", 3, 5, Controller.WEST, "Hydrogen");
     Destination goal2 = new Destination("pipeEndE", "Horatiu", 4, 5, Controller.EAST, "Hydrogen");
     
