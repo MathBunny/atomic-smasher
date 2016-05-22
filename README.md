@@ -1,6 +1,6 @@
 # Atomic Smasher
-###About This Game
-The purpose of this game is to teach children about basic chemistry concepts. It accomplishes this by allowing the user to understand how compounds are formed through an interactive game. The involves placing pipes to transport particles, and when correctly timed the particles can collide forming compounds. There are different types of blocks with different features.
+###About
+The purpose of this game is to teach children about basic chemistry concepts. It accomplishes this by allowing the user to understand how compounds are formed through an interactive game. The game involves placing pipes to transport particles, and when correctly timed the particles can collide forming compounds. There are different types of blocks with different features.
 
 ###Game Features
 * Unique graphics
