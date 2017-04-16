@@ -15,7 +15,7 @@ The purpose of this game is to teach children about basic chemistry concepts. It
 ## Software Architecture
 The game-itself (along with graphics) were designed by myself. The gameplay was made possible through heavy use of Object Oriented Principles. There is a `World` class containing the grid and making use of encapsulation. Every piece in the grid is a `ObjectInGrid`, and then they all inherit properties that provide special abilities. The `Physics` class permits the physics engine of the moving particles.
 
-##How to run this game
+## How to run this game
 Simply compile the classes in the `/classes/` folder, and then run `GameApp.java`. Optionally you can install the `javax.video` library, but it is not required (it is only for the educational videos). 
 
 ## Known Issues
